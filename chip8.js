@@ -83,6 +83,7 @@ var CHIP8 = function() {
 					s.position = "absolute";
 					s.overflow = "hidden";
 					s.color = thisScreen.backColor;
+					s.backgroundColor = thisScreen.backColor;
 					s.left = l * thisScreen.pixelScale;
 					s.top = y * thisScreen.pixelSize * thisScreen.pixelScale;
 					s.width = thisScreen.pixelSize * thisScreen.pixelScale;
@@ -104,7 +105,6 @@ var CHIP8 = function() {
 		}
 
 		this.clear = function() {
-			console.log('clear');
 			for (var x=0;x<thisScreen.pixels.length;x++) {
 				var col = thisScreen.pixels[x];
 				for (var y=0;y<col.length;y++) {
@@ -123,7 +123,7 @@ var CHIP8 = function() {
 			var p = thisScreen.getPixel(px,py);
 
 			if (p) {
-				if (p.innerHTML = '0') {
+				if (p.innerHTML == '0') {
 					p.style.color = thisScreen.frontColor;
 					p.style.backgroundColor = thisScreen.frontColor;
 					p.innerHTML = '1';
@@ -132,7 +132,6 @@ var CHIP8 = function() {
 					p.style.color = thisScreen.backColor;
 					p.style.backgroundColor = thisScreen.backColor;
 					p.innerHTML = '0';
-					return 1;
 				}
 			}
 		}
