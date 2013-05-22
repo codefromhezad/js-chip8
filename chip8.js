@@ -132,6 +132,7 @@ var CHIP8 = function() {
 					p.style.color = thisScreen.backColor;
 					p.style.backgroundColor = thisScreen.backColor;
 					p.innerHTML = '0';
+					return 1;
 				}
 			}
 		}
